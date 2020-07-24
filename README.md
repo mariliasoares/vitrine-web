@@ -18,6 +18,8 @@
     
     Builde o projeto
     $ ng serve
+    
+    * Acesse: http://localhost:4200/
 
 ## Adicione a vitrine (embed code) a qualquer site:
 ```
