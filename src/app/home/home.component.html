@@ -1,4 +1,5 @@
 <div class="grid-list-container">
+  <span>Todos os livros</span>
   <mat-grid-list 
     [responsive]="responsive"
     (responsiveColsChange)="cols = $event"
@@ -16,8 +17,113 @@
       </a>
     </mat-grid-tile>
   </mat-grid-list>
+  <mat-paginator [length]="livros.length" [pageSize]="pageSize" 
+     (page)="pageEvent = getLivros($event)">
+  </mat-paginator> 
+</div>
+
+<div class="grid-list-container">
+  <span>Aproveite e veja também!</span>
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="350"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of secao1Livros">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="grid-list-container">
+  <span>Vem começar uma história!</span>
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="350"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of secao2Livros">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="grid-list-container">
+  <span>Os principais produtos em Romances</span>
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="350"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of secao3Livros">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="grid-list-container">
+  <span>Os mais vendidos em Romances</span>
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="350"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of secao4Livros">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div class="grid-list-container">
+  <span>Produtos Patrocinados</span>
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="350"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of secao5Livros">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
      
-<mat-paginator [length]="livros.length" [pageSize]="pageSize" 
-   (page)="pageEvent = getLivros($event)">
-</mat-paginator> 

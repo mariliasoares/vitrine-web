@@ -15,8 +15,15 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   test: any = 2;
   livrosList = {};
+  secoesList = {};
+  secoes = [];
+  secao=[];
+  secao1Livros=[];
+  secao2Livros=[];
+  secao3Livros=[];
+  secao4Livros=[];
+  secao5Livros=[];
   livros = [];
-
   pageEvent: any;
   pageIndex:number = 0;
   pageSize:number = 9;
@@ -26,25 +33,36 @@ export class HomeComponent implements OnInit {
   responsive = true;
   cols = 1;
   
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+    this.fetchData();
+    console.log(this.secoes);
+    console.log(this.secao3Livros);
+    console.log(this.livros);
+  }
+
+  private async fetchData() {
     // usar promise, pois get retorna um observable, e não há necessidade de observar a url, tendo em vista que ela não muda
-     this.http
+    return await Promise.all([
+      this.http
       .get(this.url)
       .toPromise()
       .then((data) => {
         this.produtos.push(data);
         this.livrosList = { ...this.produtos[0]['products'] };
-        console.log(this.livrosList);
-        
+        this.secoesList = { ...this.produtos[0]['components'] };
+
+        for (let secao in this.secoesList) {
+          this.secoes.push(this.secoesList[secao]);
+        }
+
         for (let livro in this.livrosList) {
           this.livros.push(this.livrosList[livro]);
         }
-        console.log(this.livros);
-      });
+        // console.log(this.livros);
+        this.carregaLivrosSecoes();
+      })]);
   }
 
   getLivros(event){
@@ -58,4 +76,46 @@ export class HomeComponent implements OnInit {
       }   
     this.pageIndex = event.pageIndex;
   }
+
+  carregaLivrosSecoes() {
+    this.secao.push(this.secoes[0]['products']);
+    this.secao = this.secao[0];
+    for(const secao of this.secao) 
+      for(const livro of this.livros) 
+        if(secao.id === livro.id) 
+          this.secao1Livros.push(livro);
+
+    this.secao=[];
+    this.secao.push(this.secoes[1]['products']);
+    this.secao = this.secao[0];
+    for(const secao of this.secao) 
+      for(const livro of this.livros) 
+        if(secao.id === livro.id) 
+          this.secao2Livros.push(livro);
+    
+    this.secao=[];
+    this.secao.push(this.secoes[2]['products']);
+    this.secao = this.secao[0];
+    for(const secao of this.secao) 
+      for(const livro of this.livros) 
+        if(secao.id === livro.id) 
+          this.secao3Livros.push(livro);
+
+    this.secao=[];
+    this.secao.push(this.secoes[3]['products']);
+    this.secao = this.secao[0];
+    for(const secao of this.secao) 
+      for(const livro of this.livros) 
+        if(secao.id === livro.id) 
+          this.secao4Livros.push(livro);
+
+    this.secao=[];
+    this.secao.push(this.secoes[4]['products']);
+    this.secao = this.secao[0];
+    for(const secao of this.secao) 
+      for(const livro of this.livros) 
+        if(secao.id === livro.id) 
+          this.secao5Livros.push(livro);
+  }
+
 }
