@@ -6,12 +6,10 @@ span {
   font-size: 20px;
   &:after {
     content: "";
-    /* por padrão criam in-line e eu quero block */
     display: block; 
     width: 98%;
     height: 1px;
     background: #000;
-    /* sentido horario: cima direita baixo esquerda  */
     margin: 8px;
   }
 }

@@ -37,9 +37,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.fetchData();
-    console.log(this.secoes);
-    console.log(this.secao3Livros);
-    console.log(this.livros);
   }
 
   private async fetchData() {
