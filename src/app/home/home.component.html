@@ -1,0 +1,22 @@
+<div class="grid-list-container">
+  <mat-grid-list 
+    [responsive]="responsive"
+    (responsiveColsChange)="cols = $event"
+    rowHeight="320"
+    gutterSize="80px">
+    <mat-grid-tile class="livro-detalhes" *ngFor="let livro of livros | slice: lowValue : highValue">
+      <a class="grid-list-item" mat-ripple>
+        <div class="livro-imagem">
+          <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
+          <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
+          <p class="livro-loja">{{ livro.sellerName }}</p>
+          <a href="#"><p class="livro-preco">R$ {{ livro.price }}</p></a>
+        </div>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+     
+<mat-paginator [length]="livros.length" [pageSize]="pageSize" 
+   (page)="pageEvent = getLivros($event)">
+</mat-paginator> 

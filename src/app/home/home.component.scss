@@ -1,0 +1,39 @@
+.grid-list-container {
+  padding: 0;
+}
+
+.livro-detalhes a {
+  text-decoration: none;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.livro-imagem img {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 10px;
+}
+
+.livro-imagem p {
+  padding-bottom: 2px;
+  color: #000;
+  font-size: 14px;
+  margin: 0;
+}
+
+.livro-imagem .livro-preco {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.livro-imagem .livro-nome {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.grid-list-item {
+  padding: 4px;
+}
