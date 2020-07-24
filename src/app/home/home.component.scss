@@ -18,20 +18,24 @@
 }
 
 .livro-imagem p {
-  padding-bottom: 2px;
   color: #000;
   font-size: 14px;
   margin: 0;
 }
 
 .livro-imagem .livro-preco {
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 19px;
 }
 
 .livro-imagem .livro-nome {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.livro-imagem .livro-loja {
+  padding-bottom: 5px;
+  font-family: "Lato", sans-serif !important;
 }
 
 .grid-list-item {

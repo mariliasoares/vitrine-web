@@ -2,7 +2,7 @@
   <mat-grid-list 
     [responsive]="responsive"
     (responsiveColsChange)="cols = $event"
-    rowHeight="320"
+    rowHeight="350"
     gutterSize="80px">
     <mat-grid-tile class="livro-detalhes" *ngFor="let livro of livros | slice: lowValue : highValue">
       <a class="grid-list-item" mat-ripple>
@@ -10,7 +10,8 @@
           <a href="#"><img src="{{ livro.image.large }}" alt="livro.name" class="livro-img" /></a>
           <a href="#"><p class="livro-nome">{{ livro.name }}</p></a>
           <p class="livro-loja">{{ livro.sellerName }}</p>
-          <a href="#"><p class="livro-preco">R$ {{ livro.price }}</p></a>
+          <a href="#"><p class="livro-preco">R$ {{ livro.offerPrice }}</p></a>
+          <a href="#"><p class="livro-juros">R$ {{ livro.installment }}</p></a>
         </div>
       </a>
     </mat-grid-tile>
